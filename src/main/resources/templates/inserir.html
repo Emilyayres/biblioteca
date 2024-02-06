@@ -1,0 +1,34 @@
+
+<!DOCTYPE html> 
+ <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+   
+    <head> 
+ <meta charset="utf-8"> </meta>
+        <title>Gerenciamento de Livros</title> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+</link>   
+ 
+</head> 
+    <body> 
+        <div class="container"> 
+            <h1 >Cadastrar Livro</h1> 
+        
+            <h2 >Adicionar</h2> 
+            <form action="#" th:action="@{/salvarLivro}" th:object="${livro}" method="POST"> 
+    <input type="text" th:field="*{titulo}" placeholder="Insira o Titulo" class="form-control mt-4 col-4"> </input>
+ <span class="text-danger" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span> 
+  <input type="text" th:field="*{autor}" placeholder="Insira o Autor" class="form-control mt-4 col-4"> </input>
+                <span class="text-danger" th:if="${#fields.hasErrors('autor')}" th:errors="*{autor}"></span> 
+  <input type="text" th:field="*{genero}" placeholder="Insira o Genero" class="form-control mt-4 col-4"> </input>
+                <span class="text-danger" th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}"></span> 
+                <input type="text" th:field="*{preco}" placeholder="Insira o preço" class="form-control mt-4 col-4"> </input>
+                <span class="text-danger" th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></span> 
+                  <button type="submit" class="btn btn-info mt-4"> Salvar</button>
+            </form> 
+            <p>
+      
+              <a th:href="@{/}"> Retornar</a> </p>
+        </div> 
+ 
+    </body>         
+</html>  
